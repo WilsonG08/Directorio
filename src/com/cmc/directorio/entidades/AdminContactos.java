@@ -22,9 +22,12 @@ public class AdminContactos {
 		}
 	}
 
-	public void activarUsuario(Contacto con1) {
-		if (con1.getTelefono().isTieneWhatsapp()) {
-            con1.setActivo(true);
+	
+	public void activarUsuario(Contacto c1) {
+		AdminTelefono adminTelefono = new AdminTelefono();
+		adminTelefono.activarMensajeria(c1.getTelefono());
+		if (c1.getTelefono().isTieneWhatsapp()) {
+			c1.setActivo(true);
 		}
 	}
 
